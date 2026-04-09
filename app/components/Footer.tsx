@@ -32,8 +32,12 @@ export default function Footer() {
           ]},
           { title: "Contact", links: [
             { label: "+91 98251 24751",        href: "https://wa.me/919825124751"      },
+            { label: "+91 95375 17519",        href: "https://wa.me/919537517519"      },
             { label: "Lybytexindia@gmail.com", href: "mailto:Lybytexindia@gmail.com"  },
             { label: "Surat, Gujarat, India",  href: "#"                               },
+          ]},
+          { title: "TikTok", links:[
+            { label: "TikTok @lybytexindia", href: "https://www.tiktok.com/@lybytexindia" },
           ]},
         ].map(({ title, links }) => (
           <div key={title}>

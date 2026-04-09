@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -24,7 +25,7 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Kente stripe — always on top */}
+      {/* Kente stripe */}
       <div className="kente" style={{ position: "fixed", top: 0, left: 0, right: 0, height: 6, zIndex: 201 }} />
 
       {/* Nav */}
@@ -33,15 +34,33 @@ export default function Navbar() {
         height: 64,
         background: navBg,
         backdropFilter: scrolled ? "blur(20px)" : "none",
-        borderBottom: scrolled ? "1px solid rgba(255,255,255,0.07)" : "none",
+        borderBottom: "none", // removed the line
         display: "flex", alignItems: "center", justifyContent: "space-between",
-        padding: "0 48px",
-        transition: "background 0.5s ease, border-color 0.5s ease",
+        padding: "0 24px 0 16px", // tighter left padding
+        transition: "background 0.5s ease",
       }}>
-        {/* Logo */}
-        <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "baseline", gap: 8 }}>
-          <span className="f-display" style={{ fontSize: 24, color: "#fff", letterSpacing: "0.06em" }}>LYBYTEX</span>
-          <span style={{ fontSize: 9, color: "var(--gold)", letterSpacing: "0.26em", textTransform: "uppercase", fontWeight: 600 }}>INDIA</span>
+
+        {/* Logo — flush left */}
+        <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 8 }}>
+          <Image
+            src="/logo3.png"
+            alt="LybyTex India"
+            width={52}
+            height={52}
+            style={{
+              display: "block",
+              mixBlendMode: "lighten",
+              borderRadius: 6,
+            }}
+          />
+          <div style={{ display: "flex", flexDirection: "column", gap: 1 }}>
+            <span className="f-display" style={{ fontSize: 22, color: "#fff", letterSpacing: "0.06em", lineHeight: 1 }}>
+              LYBYTEX
+            </span>
+            <span style={{ fontSize: 8, color: "var(--gold)", letterSpacing: "0.28em", textTransform: "uppercase", fontWeight: 600, lineHeight: 1 }}>
+              INDIA
+            </span>
+          </div>
         </Link>
 
         {/* Desktop links */}
@@ -114,14 +133,14 @@ export default function Navbar() {
         </a>
       </div>
 
-      {/* WhatsApp FAB — all screens */}
+      {/* WhatsApp FAB */}
       <a href={WA} target="_blank" rel="noopener noreferrer" className="wa-fab">
         <WaSvg size={22} /> WhatsApp Us
       </a>
 
       <style>{`
         @media (max-width: 768px) {
-          nav { padding: 0 20px !important; height: 56px !important; }
+          nav { padding: 0 16px !important; height: 56px !important; }
           .nav-links { display: none !important; }
           .mobile-menu-btn { display: flex !important; }
         }
