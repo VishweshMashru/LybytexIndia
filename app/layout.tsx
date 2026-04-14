@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import RevealInit from "./components/RevealInit";
 
-export const metadata = {
+export const metadata: Metadata = {
   metadataBase: new URL("https://lybytex.com"),
   title: {
     default: "LybyTex India — African Fabric Manufacturer & Exporter | Surat",
@@ -26,6 +26,9 @@ export const metadata = {
     "fabric wholesale ghana nigeria kenya",
     "lybytex india",
   ],
+  verification: {
+    google: "dMEFaxv6QmNOGKR5vxhveet_1nD0A4zKF44i9OvRSI0",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
