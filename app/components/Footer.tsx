@@ -35,6 +35,7 @@ export default function Footer() {
             { label: "+91 95375 17519",        href: "https://wa.me/919537517519"      },
             { label: "Lybytexindia@gmail.com", href: "mailto:Lybytexindia@gmail.com"  },
             { label: "Surat, Gujarat, India",  href: "#"                               },
+            { label: "Return Policy", href: "/return-policy" },
           ]},
           { title: "TikTok", links:[
             { label: "TikTok @lybytexindia", href: "https://www.tiktok.com/@lybytexindia" },
